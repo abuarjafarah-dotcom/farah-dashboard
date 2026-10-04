@@ -103,4 +103,43 @@ export default function Dashboard() {
     <div className={styles.container}>
       <header className={styles.header}>
         <h1>Mom's Master Dashboard</h1>
-        
+        <p className={styles.subtitle}>Oct 4 — Hamad 4.5 | Talal 3 | Yousef 6m</p>
+      </header>
+
+      <nav className={styles.tabs}>
+        <button
+          className={`${styles.tabButton} ${activeTab === 'home' ? styles.active : ''}`}
+          onClick={() => setActiveTab('home')}
+        >
+          ☀️ Home
+        </button>
+        <button
+          className={`${styles.tabButton} ${activeTab === 'schedule' ? styles.active : ''}`}
+          onClick={() => setActiveTab('schedule')}
+        >
+          📋 Schedule
+        </button>
+        <button
+          className={`${styles.tabButton} ${activeTab === 'projects' ? styles.active : ''}`}
+          onClick={() => setActiveTab('projects')}
+        >
+          🎯 Projects
+        </button>
+        <button
+          className={`${styles.tabButton} ${activeTab === 'grocery' ? styles.active : ''}`}
+          onClick={() => setActiveTab('grocery')}
+        >
+          🛒 Grocery
+        </button>
+      </nav>
+
+      <main className={styles.main}>
+        {getTabs()}
+      </main>
+
+      <footer className={styles.footer}>
+        <p>Updated Oct 4, 2026 — WorkWave starts Oct 26</p>
+      </footer>
+    </div>
+  );
+}
